@@ -20,7 +20,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: atendai/evolution-api
+          images: rcesar1995/evolution-api
           tags: latest
 
       - name: Set up QEMU
@@ -39,7 +39,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v5
         with:
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
